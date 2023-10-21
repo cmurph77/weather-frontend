@@ -1,68 +1,57 @@
 const app = Vue.createApp({
     data(){
         return {
-            name: 'cian' ,
+            name: 'N/A' ,
             age: 22,
             showResults: false,
-            city: 'Enter City...',
+            city: 'N/A',
             lat: 0,
             lon: 0,
             daily_weather: {
                 day_one: {
-                    unix_dt: 10000000000,
-                    formated_date: "1.12.2023",
-                    temp: 23.4,
-                    rainfall_level: 12,
-                    windspeed: 20,
-                    weather_type: "HOT",
+                    unix_dt: 0,
+                    formated_date: "N/A",
+                    temp: 0,
+                    rainfall_level: 0,
+                    windspeed: 0,
+                    weather_type: "N/A",
                     wear_mask: true
                 },
                 day_two: {
-                    unix_dt: 20000000000,
-                    formated_date: "2.12.2023",
-                    temp: 23.4,
-                    rainfall_level: 12,
-                    windspeed: 20,
-                    weather_type: "HOT",
+                    unix_dt: 0,
+                    formated_date: "N/A",
+                    temp: 0,
+                    rainfall_level: 0,
+                    windspeed: 0,
+                    weather_type: "N/A",
                     wear_mask: false
                 },
                 day_three: {
-                    unix_dt: 30000000000,
-                    formated_date: "3.12.2023",
-                    temp: 23.4,
-                    rainfall_level: 12,
-                    windspeed: 20,
-                    weather_type: "HOT",
+                    unix_dt: 0,
+                    formated_date: "N/A",
+                    temp: 0,
+                    rainfall_level: 0,
+                    windspeed: 0,
+                    weather_type: "N/A",
                     wear_mask: true
                 },
                 day_four: {
-                    unix_dt: 40000000000,
-                    formated_date: "4.12.2023",
-                    temp: 23.4,
-                    rainfall_level: 12,
-                    windspeed: 20,
-                    weather_type: "HOT",
+                    unix_dt:0,
+                    formated_date: "N/A",
+                    temp: 0,
+                    rainfall_level: 0,
+                    windspeed: 0,
+                    weather_type: "N/A",
                     wear_mask: true
                 },
                 day_five: {
-                    unix_dt: 50000000000,
-                    formated_date: "5.12.2023",
-                    temp: 23.4,
-                    rainfall_level: 12,
-                    windspeed: 20,
-                    weather_type: "HOT",
+                    unix_dt: 0,
+                    formated_date: "N/A",
+                    temp: 0,
+                    rainfall_level: 0,
+                    windspeed: 0,
+                    weather_type: "N/A",
                     wear_mask: true
-                }
-            },
-            days: {
-                day_one: {
-                    title: 'Monday'
-                },
-                day_two: {
-                    title: 'Tuesday'
-                },
-                day_three: {
-                    title: 'Wednesday'
                 }
             }
         }
@@ -75,13 +64,16 @@ const app = Vue.createApp({
                 .then(response => response.json())
                 .then(data => {
                     // 'data' now contains the JSON object
-                    //this.weatherData = data.daily_weather;
-                    console.log(data);})
+                    this.daily_weather = data.days;  //todo get data through api
+                })
                 .catch(error => console.error('Error:', error)
             );
             this.city = city;
-            console.log("Set city data field to", city)
 
+
+        },
+        setData(data){
+            this.daily_weather.day_one.formated_date = data.days.day_one.formated_date;
         },
         
         toggleShowResults(){
