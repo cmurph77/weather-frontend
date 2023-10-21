@@ -4,6 +4,7 @@
     "lat": 1000,
     "day_one" : {
         "unix_dt": 10000000000,
+        "formated-date": "1.12.2023",
         "temp": 23.4 ,
         "rainfall-level": 12,
         "windspeed": 20 ,
@@ -12,6 +13,7 @@
     },
     "day_two" :{
         "unix_dt": 10000000000,
+        "formated-date": "2.12.2023",
         "temp": 23.4 ,
         "rainfall-level": 12,
         "windspeed": 20 ,
@@ -20,6 +22,7 @@
     },
     "day_three": {
         "unix_dt": 10000000000,
+        "formated-date": "3.12.2023",
         "temp": 23.4 ,
         "rainfall-level": 12,
         "windspeed": 20 ,
@@ -28,6 +31,7 @@
     },
     "day_four":{
         "unix_dt": 10000000000,
+        "formated-date": "4.12.2023",
         "temp": 23.4 ,
         "rainfall-level": 12,
         "windspeed": 20 ,
@@ -36,6 +40,7 @@
     },
     "day_five": {
         "unix_dt": 10000000000,
+        "formated-date": "5.12.2023",
         "temp": 23.4 ,
         "rainfall-level": 12,
         "windspeed": 20 ,
