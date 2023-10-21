@@ -1,4 +1,4 @@
-const server = 'https://render-weather-api-2.onrender.com/sample'
+const server = 'https://render-weather-api-2.onrender.com/sample'  //replave this with acctual api endpoint
 
 
 
@@ -64,7 +64,8 @@ const app = Vue.createApp({
     methods: {
         getWeatherFromAPI(city){
             console.log("Getting Weather Data for ", city)
-            fetch(server)
+            const url = `${server}/${city}`;
+            fetch(url)
                 .then((res) => res.json())
                 .then((result) => {
                     console.log(JSON.stringify(result, null, 3));
