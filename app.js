@@ -9,6 +9,7 @@ const app = Vue.createApp({
             age: 22,
             showResults: false,
             city: 'N/A',
+            country: 'N/A',
             lat: 0,
             lon: 0,
             daily_weather: {
@@ -73,6 +74,7 @@ const app = Vue.createApp({
                     this.lat = result.lat
                     this.lon = result.lon
                     this.city = result.city
+                    this.country = result.country
                 });
 
 
