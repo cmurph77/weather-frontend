@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App </title>
-    <h1> Welcome to the Cian's Weather App Live</h1>
+    <title>Weather App</title>
+    <h1>Welcome to Cian's Weather App Live</h1>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.prod.js"></script>
 </head>
 <body>
-    <div id="app"> 
+    <div id="app">
         <input type="text" v-model="seached_city" placeholder="Enter a city...">
         <button @click="getWeatherFromAPI(seached_city); showResults = true">Get Weather</button>
 
@@ -16,37 +17,31 @@
             <h1>Weather for {{city}}</h1>
             <p>Lat: {{lat}}. Lon {{lon}}</p>
             <p>Country: {{country}}</p>
-            <ul class="horizontal-list">
-                <li v-for="day in daily_weather" class="horizontal-item">
-                    <p>{{ day.formated_date }}</p>
-                    <p>Rainfall: {{day.rainfall_level}}mm</p>
-                    <p>Temperature: {{ day.temp }}°C</p>
-                    <p>Wind Speed: {{day.windspeed}}km/h</p>
-                    <p>Type: {{day.weather_type}}.</p>
-                    <p v-if="day.wear_mask">You should wear a mask.</p>
-                </li>
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Rainfall (mm)</th>
+                        <th>Temperature (°C)</th>
+                        <th>Wind Speed (km/h)</th>
+                        <th>Type</th>
+                        <th>Wear Mask</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="day in daily_weather">
+                        <td>{{ day.formated_date }}</td>
+                        <td>{{ day.rainfall_level }}</td>
+                        <td>{{ day.temp }}</td>
+                        <td>{{ day.windspeed }}</td>
+                        <td>{{ day.weather_type }}</td>
+                        <td v-if="day.wear_mask">Yes</td>
+                        <td v-else>No</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
 </html>
-
-
-
-        <!-- <p>{{ name }} </p>
-        <p> {{age}}</p>
-        <button @click="age++">Make me older</button>
-        <button @click="age--">Make me younger</button>
-        <button @click="changeTitle('poo')">Change the Title</button>
-        
-        <button @click="toggleShowResults">
-            <span v-if="showResults">Hide Books</span>
-            <span v-if="!showResults">Show Books</span>
-        </button>
-        <div v-show="showResults">
-            <p>Showing Results</p>
-        </div>
-        <div v-if=showResults>
-            <p>Correct</p>
-        </div> -->
