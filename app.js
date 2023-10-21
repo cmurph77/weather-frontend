@@ -1,3 +1,7 @@
+const server = 'https://render-weather-api-2.onrender.com/sample'
+
+
+
 const app = Vue.createApp({
     data(){
         return {
@@ -58,17 +62,17 @@ const app = Vue.createApp({
     },
 
     methods: {
-        getWeather(city){
+        getWeatherFromAPI(city){
             console.log("Getting Weather Data for ", city)
-            fetch('sample_data.json')
-                .then(response => response.json())
-                .then(data => {
-                    // 'data' now contains the JSON object
-                    this.daily_weather = data.days;  //todo get data through api
-                })
-                .catch(error => console.error('Error:', error)
-            );
-            this.city = city;
+            fetch(server)
+                .then((res) => res.json())
+                .then((result) => {
+                    console.log(JSON.stringify(result, null, 3));
+                    this.daily_weather = result.days
+                    this.lat = result.lat
+                    this.lon = result.lon
+                    this.city = result.city
+                });
 
 
         },

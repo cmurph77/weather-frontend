@@ -10,7 +10,7 @@
 <body>
     <div id="app"> 
         <input type="text" v-model="seached_city" placeholder="Enter a city...">
-        <button @click="getWeather(seached_city); showResults = true">Get Weather</button>
+        <button @click="getWeatherFromAPI(seached_city); showResults = true">Get Weather</button>
 
         <div v-if="showResults">
             <h1>Weather for {{city}}</h1>
