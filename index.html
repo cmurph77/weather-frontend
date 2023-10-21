@@ -8,6 +8,20 @@
 </head>
 <body>
     <div id="app"> 
+        <input type="text" v-model="city" placeholder="Enter a city...">
+        <button @click="getWeather(city); showResults = true">Get Weather</button>
+        <!-- <button @click="toggleShowResults()">Show Results</button> -->
+        <div v-if="showResults">
+            <h1>Weather for {{ city }}</h1>
+            <pre>{{ weatherData }}</pre>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
         <!-- <p>{{ name }} </p>
         <p> {{age}}</p>
         <button @click="age++">Make me older</button>
@@ -24,8 +38,3 @@
         <div v-if=showResults>
             <p>Correct</p>
         </div> -->
-        <button @click="getWeather('dalkey')">Call API</button>
-    </div>
-    <script src="app.js"></script>
-</body>
-</html>
