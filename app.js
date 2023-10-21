@@ -1,4 +1,4 @@
-const server = 'https://render-weather-api-2.onrender.com/sample'  //replave this with acctual api endpoint
+const server = 'https://render-weather-api-2.onrender.com/weather'  //replave this with acctual api endpoint
 
 
 
