@@ -1,4 +1,3 @@
-const api = "https//:localhost3001/weather/";
 const app = Vue.createApp({
     data(){
         
