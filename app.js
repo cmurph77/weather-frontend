@@ -4,7 +4,14 @@ const app = Vue.createApp({
             name: 'cian' ,
             age: 22,
             showResults: false,
-            weatherData : {}
+            weatherData: {
+                city: '',
+                day_one: {},
+                day_two: {},
+                day_three: {},
+                day_four: {},
+                day_five: {},
+            },
         }
     },
 
@@ -36,4 +43,6 @@ const app = Vue.createApp({
     }
 });
 
-app.mount('#app')
+
+
+app.mount('#app');
