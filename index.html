@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App </title>
@@ -12,14 +13,15 @@
         <button @click="getWeather(seached_city); showResults = true">Get Weather</button>
 
         <div v-if="showResults">
-            <h1>Weather for {{ city }}</h1>
-            <ul>
-                <li v-for="day in daily_weather ">
+            <h1>Weather for {{city}}</h1>
+            <ul class="horizontal-list">
+                <li v-for="day in daily_weather" class="horizontal-item">
                     <p>Date: {{ day.formated_date }}</p>
-                    <p>Rainfall: {{rainfall}}</p>
-                    <p>Temperature {{ day.temp }}</p>
-                    <p>Type {{day.weather_type}} </p>
-
+                    <p>Rainfall: {{day.rainfall}}mm</p>
+                    <p>Temperature: {{ day.temp }}°C</p>
+                    <p>Wind Speed: {{day.windspeed}}km/h</p>
+                    <p>Type: {{day.weather_type}}.</p>
+                    <p v-if="day.wear_mask">You should wear a mask.</p>
                 </li>
             </ul>
         </div>

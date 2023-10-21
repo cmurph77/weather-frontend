@@ -1,0 +1,11 @@
+.horizontal-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Display the list items in a horizontal line */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+
+.horizontal-item {
+    flex: 0 0 auto; /* Make the list items stay their original size */
+    margin-right: 20px; /* Add some spacing between the list items */
+}

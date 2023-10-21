@@ -24,7 +24,7 @@ const app = Vue.createApp({
                     rainfall_level: 12,
                     windspeed: 20,
                     weather_type: "HOT",
-                    wear_mask: true
+                    wear_mask: false
                 },
                 day_three: {
                     unix_dt: 30000000000,
@@ -76,11 +76,11 @@ const app = Vue.createApp({
                 .then(data => {
                     // 'data' now contains the JSON object
                     //this.weatherData = data.daily_weather;
-                    this.city = city;
-                    console.log("Set city data field")
                     console.log(data);})
                 .catch(error => console.error('Error:', error)
             );
+            this.city = city;
+            console.log("Set city data field to", city)
 
         },
         
