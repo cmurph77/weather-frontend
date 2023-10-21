@@ -25,7 +25,6 @@
                         <th>Temperature (°C)</th>
                         <th>Wind Speed (km/h)</th>
                         <th>Type</th>
-                        <th>Wear Mask</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,8 +34,6 @@
                         <td>{{ day.temp }}</td>
                         <td>{{ day.windspeed }}</td>
                         <td>{{ day.weather_type }}</td>
-                        <td v-if="day.wear_mask">Yes</td>
-                        <td v-else>No</td>
                     </tr>
                 </tbody>
             </table>
