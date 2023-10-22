@@ -12,7 +12,7 @@
     <img alt= "sun and cloud" height="100"src='https://www.pngmart.com/files/12/Sun-And-Cloud-PNG-HD.png'/>
     <div id="app">
         <input type="text" v-model="seached_city" placeholder="Enter a city...">
-        <button @click="getWeatherFromAPI(seached_city); showResults = true">Get Weather</button>
+        <button @click="getWeatherFromAPI(seached_city); getPolutionFromAPI(); showResults = true">Get Weather</button>
 
         <div v-if="showResults">
             <h1>Weather for {{city}}</h1>
@@ -39,6 +39,10 @@
                 </tbody>
             </table>
             <p v-if="bring_umbrella=true">Bring an Umbrella, its going to Rain!</p>
+            <button @click="getPolutionFromAPI()">Check Pollution Level</button>
+            <p v-if="pm2>=10">Wear a Mask, the PM2_5 value is {{pm2}}.</p>
+            <p v-if="pm2<10">Pollution Levels are safe, the PM2_5 value is {{pm2}}.</p>
+
 
         </div>
     </div>

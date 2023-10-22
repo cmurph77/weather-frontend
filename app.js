@@ -1,4 +1,4 @@
-const server = 'https://render-weather-api-2.onrender.com/weather'  // SERVER API ENDPOINT
+const server = 'https://render-weather-api-2.onrender.com'  // SERVER API ENDPOINT
 
 
 
@@ -12,6 +12,7 @@ const app = Vue.createApp({
             country: 'N/A',
             lat: 0,
             lon: 0,
+            pm2: 0,
             bring_umbrella: false,
             daily_weather : {}
         }
@@ -20,7 +21,7 @@ const app = Vue.createApp({
     methods: {
         getWeatherFromAPI(city){
             console.log("Getting Weather Data for ", city)
-            const url = `${server}/${city}`;
+            const url = `${server}/weather/${city}`;
             fetch(url)
                 .then((res) => res.json())
                 .then((result) => {
@@ -32,9 +33,22 @@ const app = Vue.createApp({
                     this.country = result.country
                     this.bring_umbrella = bring_umbrella
                 });
+                //this.getPolutionFromAPI() // update polution level
 
 
-        }
+        },
+        getPolutionFromAPI(){
+            lat = this.lat
+            lon = this.lon
+            console.log("Getting Polution Data for  ( ",lat, ", ", lon, ")")
+            const url = `${server}/polution/${lat}/${lon}`;
+            fetch(url)
+                .then((res) => res.json())
+                .then((result) => {
+                    console.log(JSON.stringify(result, null, 3));
+                    this.pm2 = result.pm2_5
+                });
+        } 
     }
 });
 
