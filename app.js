@@ -34,8 +34,6 @@ const app = Vue.createApp({
                     this.country = result.country
                     this.bring_umbrella = bring_umbrella
                 });
-                // showPollution = false;
-                //this.getPolutionFromAPI() // update polution level
 
 
         },
