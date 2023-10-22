@@ -20,6 +20,10 @@ const app = Vue.createApp({
     },
 
     methods: {
+        /**
+         * @brief - Gets the weather data for the city from the server and updates the data properties
+         * @param {*} city 
+         */
         getWeatherFromAPI(city){
             console.log("Getting Weather Data for ", city)
             const url = `${server}/weather/${city}`;
@@ -37,6 +41,10 @@ const app = Vue.createApp({
 
 
         },
+        /**
+         * @brief Gets the pollution levels from the server using the lat and lon in data()
+         *       and updates the pm2_5 value in data properties
+         */
         getPolutionFromAPI(){
             lat = this.lat
             lon = this.lon
