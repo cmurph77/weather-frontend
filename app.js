@@ -8,6 +8,7 @@ const app = Vue.createApp({
             name: 'N/A' ,
             age: 22,
             showResults: false,
+            showPollution: false,
             city: 'N/A',
             country: 'N/A',
             lat: 0,
@@ -33,6 +34,7 @@ const app = Vue.createApp({
                     this.country = result.country
                     this.bring_umbrella = bring_umbrella
                 });
+                // showPollution = false;
                 //this.getPolutionFromAPI() // update polution level
 
 
